@@ -2,7 +2,8 @@
     "homepage": "https://github.com/carlwhamilton/mousetrap_toolschains",
     "maintainers": [],
     "versions": [
-        "0.1.0"
+        "0.1.0",
+        "0.1.1"
     ],
     "yanked_versions": {}
 }
