@@ -1,0 +1,22 @@
+#!/bin/sh
+set -e
+
+MODULE=${1:?"Missing module parameter"}
+VERSION=${2:?"Missing version parameter"}
+
+MODULE_DIR="modules/${MODULE}/${VERSION}"
+mkdir -p ${MODULE_DIR}
+
+MODULE_URL="https://raw.githubusercontent.com/carlwhamilton/${MODULE}/v${VERSION}/MODULE.bazel"
+curl --silent --location --output "${MODULE_DIR}/MODULE.bazel" ${MODULE_URL}
+
+ARCHIVE_URL="https://github.com/carlwhamilton/${MODULE}/archive/refs/tags/v${VERSION}.tar.gz"
+INTEGRITY="sha256-$(curl --silent --location ${ARCHIVE_URL} | openssl dgst -sha256 -binary | openssl base64 -A)"
+
+cat <<EOF > "${MODULE_DIR}/source.json"
+{
+    "url": "${ARCHIVE_URL}"
+    "integrity": "${INTEGRITY}",
+    "strip_prefix": "${MODULE}-${VERSION}",
+}
+EOF
