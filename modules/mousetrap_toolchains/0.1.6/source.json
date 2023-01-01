@@ -1,5 +1,5 @@
 {
-    "url": "https://github.com/carlwhamilton/mousetrap_toolchains/archive/refs/tags/v0.1.6.tar.gz"
+    "url": "https://github.com/carlwhamilton/mousetrap_toolchains/archive/refs/tags/v0.1.6.tar.gz",
     "integrity": "sha256-YPy1UhJGD091Q+cTisaPAP4Ax+X8swwUIxcsAHLEt5g=",
-    "strip_prefix": "mousetrap_toolchains-0.1.6",
+    "strip_prefix": "mousetrap_toolchains-0.1.6"
 }

@@ -15,8 +15,8 @@ INTEGRITY="sha256-$(curl --silent --location ${ARCHIVE_URL} | openssl dgst -sha2
 
 cat <<EOF > "${MODULE_DIR}/source.json"
 {
-    "url": "${ARCHIVE_URL}"
+    "url": "${ARCHIVE_URL}",
     "integrity": "${INTEGRITY}",
-    "strip_prefix": "${MODULE}-${VERSION}",
+    "strip_prefix": "${MODULE}-${VERSION}"
 }
 EOF
